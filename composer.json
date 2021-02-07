@@ -1,0 +1,25 @@
+{
+    "name": "retrowaver/proxy-checker",
+    "description": "Proxy Checker is a PHP library that allows you to quickly check a list of proxies.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "retrowaver",
+            "email": "23421260+retrowaver@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "php": "^7.2.5",
+        "guzzlehttp/guzzle": "^6.5",
+        "psr/http-message": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Retrowaver\\ProxyChecker\\": "src/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8"
+    }
+}
