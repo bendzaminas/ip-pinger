@@ -1,6 +1,6 @@
 <?php
 
-namespace BCode\ProxyPinger;
+namespace BCode\IpPinger;
 
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -10,7 +10,7 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Promise\EachPromise;
 use GuzzleHttp\Promise\PromiseInterface;
 
-class ProxyPinger
+class IpPinger
 {
     /**
      * @var ClientInterface
@@ -49,8 +49,8 @@ class ProxyPinger
     }
 
     /**
-     * @param ProxyInterface[] $proxies
-     * @return ProxyInterface[]
+     * @param IpInterface[] $ips
+     * @return IpInterface[]
      */
     public function pingIps(array $ips): array
     {
