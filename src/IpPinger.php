@@ -54,7 +54,7 @@ class IpPinger
      */
     public function pingIps(array $ips): array
     {
-        $proxyIndexMap = array_keys($ips);
+        $ipIndexMap = array_keys($ips);
 		
 
         $eachPromise = new EachPromise($this->getPromiseGenerator($ips)(), [
