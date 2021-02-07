@@ -66,7 +66,7 @@ class IpPinger
                 $this->ips[] = ["status" => true, "ip" => $ip];
         
             },
-            'rejected' => function (\Exception $reason, int $index) use ($ips, $requestOptions, $ipIndexMap): void {
+            'rejected' => function (\Exception $reason, int $index) use ($ips, $ipIndexMap): void {
             	
 		$ip = $ips[$ipIndexMap[$index]];
 					
