@@ -1,11 +1,11 @@
 {
-    "name": "retrowaver/proxy-checker",
-    "description": "Proxy Checker is a PHP library that allows you to quickly check a list of proxies.",
+    "name": "bendzaminas/proxy-pinger",
+    "description": "Proxy Pinger is a PHP library that allows you to quickly ping a list of proxies.",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
-            "name": "retrowaver",
+            "name": "bendzaminas",
             "email": "23421260+retrowaver@users.noreply.github.com"
         }
     ],
@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Retrowaver\\ProxyChecker\\": "src/"
+            "Retrowaver\\ProxyPinger\\": "src/"
         }
     },
     "require-dev": {
