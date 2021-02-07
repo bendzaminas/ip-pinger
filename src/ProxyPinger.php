@@ -1,12 +1,10 @@
 <?php
 
-namespace Retrowaver\ProxyChecker;
+namespace BCode\ProxyPinger;
 
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use Retrowaver\ProxyChecker\ResponseChecker\ResponseCheckerInterface;
-use Retrowaver\ProxyChecker\ResponseChecker\ResponseParserInterface;
-use Retrowaver\ProxyChecker\Entity\ProxyInterface;
+use BCode\ProxyPinger\Entity\IpInterface;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Client;
 use GuzzleHttp\Promise\EachPromise;
@@ -22,20 +20,31 @@ class ProxyPinger
 	/**
      * @var array
      */
+    protected $options;
+	
+	/**
+     * @var array
+     */
+    protected $requestOptions;
+	
+	/**
+     * @var array
+     */
     protected $ips;
 
     /**
-     * @param RequestInterface $request
-     * @param ResponseCheckerInterface $responseChecker
      * @param array|null $options
      * @param array|null $requestOptions
      * @param ClientInterface|null $guzzle
      */
     public function __construct(
-       
+        ?array $options = [],
+        ?array $requestOptions = [],
+        ?ClientInterface $guzzle = null
     ) {
-
-        $this->client = $guzzle ?? new Client(['timeout'=>1]);
+	$this->options = $options + $this->getDefaultOptions();
+        $this->requestOptions = $requestOptions + $this->getDefaultRequestOptions();
+        $this->client = $guzzle ?? new Client($this->requestOptions);
 	$this->ips = [];
     }
 
@@ -52,9 +61,9 @@ class ProxyPinger
             'concurrency' => $this->options['concurrency'],
             'fulfilled' => function (ResponseInterface $response, int $index) use ($ips, &$validIps, $ipIndexMap): void {
                
-		    $ip = $ips[$ipIndexMap[$index]];
+		$ip = $ips[$ipIndexMap[$index]];
 					
-                    $this->ips[] = ["status" => true, "ip" => $ip];
+                $this->ips[] = ["status" => true, "ip" => $ip];
         
             },
             'rejected' => function (\Exception $reason, int $index) use ($ips, $requestOptions, $ipIndexMap): void {
@@ -71,7 +80,7 @@ class ProxyPinger
     }
 
     /**
-     * @param ProxyInterface[] $proxies
+     * @param IpsInterface[] $ips
      * @return \Closure
      */
     protected function getPromiseGenerator(array $ips): \Closure
@@ -99,7 +108,7 @@ class ProxyPinger
     protected function getDefaultRequestOptions(): array
     {
         return [
-            'timeout' => 50
+            'timeout' => 1
         ];
     }
 }
