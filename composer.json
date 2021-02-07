@@ -1,12 +1,12 @@
 {
-    "name": "bendzaminas/proxy-pinger",
-    "description": "Proxy Pinger is a PHP library that allows you to quickly ping a list of proxies.",
+    "name": "bcode/ip-pinger",
+    "description": "Ip Pinger is a PHP library that allows you to quickly async ping a list of ips.",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
             "name": "bendzaminas",
-            "email": "23421260+retrowaver@users.noreply.github.com"
+            "email": ""
         }
     ],
     "require": {
@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Retrowaver\\ProxyPinger\\": "src/"
+            "BCode\\IpPinger\\": "src/"
         }
     },
     "require-dev": {
