@@ -31,7 +31,7 @@ use BCode\IpPinger\IpPinger;
 
 $ipPinger = new IpPinger();
 
-$pingedIps = $ipPinger->checkProxies($ips);
+$pingedIps = $ipPinger->pingIps($ips);
 ```
 
 ## 2. Additional info
