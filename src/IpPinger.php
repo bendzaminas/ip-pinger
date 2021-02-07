@@ -4,7 +4,7 @@ namespace BCode\IpPinger;
 
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use BCode\ProxyPinger\Entity\IpInterface;
+use BCode\IpPinger\Entity\IpInterface;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Client;
 use GuzzleHttp\Promise\EachPromise;
