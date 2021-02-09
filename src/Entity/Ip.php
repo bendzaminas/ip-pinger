@@ -14,10 +14,15 @@ class Ip implements IpInterface
      * @var string IP
      */
     protected $ip;
+	
+     /**
+     * @var string IP
+     */
+    protected $port;
 
     public function __toString()
     {
-        return $this->ip;
+        return $this->ip . ':' . $this->port;
     }
 	
 	public function getId(): string
@@ -28,6 +33,12 @@ class Ip implements IpInterface
     public function setId(string $id): IpInterface
     {
         $this->id = $id;
+        return $this;
+    }
+	
+    public function setPort(string $port): IpInterface
+    {
+        $this->port = $port;
         return $this;
     }
 	
