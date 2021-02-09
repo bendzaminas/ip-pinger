@@ -42,7 +42,12 @@ class Ip implements IpInterface
         return $this;
     }
 	
-    public function getIp(): int
+    public function getPort(): int
+    {
+        return $this->port;
+    }
+	
+    public function getIp(): string
     {
         return $this->ip;
     }
