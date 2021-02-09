@@ -26,5 +26,16 @@ interface IpInterface
      * @return IpInterface
      */
     public function setIp(string $ip): IpInterface;
+	
+	 /**
+     * @return string
+     */
+    public function getPort(): int;
+
+    /**
+     * @param string $ip
+     * @return IpInterface
+     */
+    public function setPort(int $ip): IpInterface;
 
 }
