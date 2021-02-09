@@ -36,13 +36,13 @@ class Ip implements IpInterface
         return $this;
     }
 	
-    public function setPort(string $port): IpInterface
+    public function setPort(int $port): IpInterface
     {
         $this->port = $port;
         return $this;
     }
 	
-    public function getIp(): string
+    public function getIp(): int
     {
         return $this->ip;
     }
