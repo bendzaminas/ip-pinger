@@ -30,12 +30,12 @@ interface IpInterface
 	 /**
      * @return string
      */
-    public function getLatency(): int|bool;
+    public function getLatency();
 
     /**
      * @param string $ip
      * @return IpInterface
      */
-    public function setLatency(int|bool $latency): IpInterface;
+    public function setLatency($latency): IpInterface;
 
 }
