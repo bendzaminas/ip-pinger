@@ -32,6 +32,17 @@ use BCode\IpPinger\IpPinger;
 $ipPinger = new IpPinger();
 
 $pingedIps = $ipPinger->pingIps($ips);
+
+foreach($pingedIps as $pingedIp){
+    if($pingedIp->getLatency())
+    {
+         //good $pingedIp->getLatency() prints response in ms      
+    }
+    else
+    {
+         //bad $pingedIp->getLatency() prints false      
+    }
+}
 ```
 
 ## 2. Additional info
