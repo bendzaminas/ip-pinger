@@ -14,11 +14,8 @@ class Ip implements IpInterface
      * @var string IP
      */
     protected $ip;
-	
-     /**
-     * @var string IP
-     */
-    protected $port;
+    
+    protected $latency;
 
     public function __toString()
     {
@@ -36,15 +33,15 @@ class Ip implements IpInterface
         return $this;
     }
 	
-    public function setPort(int $port): IpInterface
+    public function getLatency(): int|bool
     {
-        $this->port = $port;
-        return $this;
+        return $this->id;
     }
-	
-    public function getPort(): int
+
+    public function setLatency(int|bool $latency): IpInterface
     {
-        return $this->port;
+        $this->latency = $latency;
+        return $this;
     }
 	
     public function getIp(): string
