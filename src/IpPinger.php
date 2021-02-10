@@ -11,8 +11,8 @@ class IpPinger
 
     public function __construct(int $concurrency = 20, int $timeout = 15) {
 	$this->pool = Pool::create();
-	$this->concurrency($concurrency);
-	$this->timeout($timeout);
+	$this->pool->concurrency($concurrency);
+	$this->pool->timeout($timeout);
     }
 
     public function pingIps(array $ips): array
