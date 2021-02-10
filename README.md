@@ -29,7 +29,7 @@ $ips = [
 ```php
 use BCode\IpPinger\IpPinger;
 
-$ipPinger = new IpPinger();
+$ipPinger = new IpPinger(20, 5); // 20 - concurrency, 5 - timeout
 
 $pingedIps = $ipPinger->pingIps($ips);
 
