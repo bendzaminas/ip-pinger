@@ -33,8 +33,7 @@ class IpPinger
                 })->then(function ($ip) use (&$pingedIps) {
                       $pingedIps[] = $ip;
                 })->catch(function (Throwable $exception) use (&$pingedIps)  {
-		      $ip->setException($exception);
-		      $pingedIps[] = $ip;
+		      //todo
                 });
          }
 
