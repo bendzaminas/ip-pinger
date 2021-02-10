@@ -33,12 +33,12 @@ class Ip implements IpInterface
         return $this;
     }
 	
-    public function getLatency(): int|bool
+    public function getLatency()
     {
         return $this->id;
     }
 
-    public function setLatency(int|bool $latency): IpInterface
+    public function setLatency($latency): IpInterface
     {
         $this->latency = $latency;
         return $this;
