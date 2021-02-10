@@ -35,7 +35,7 @@ class Ip implements IpInterface
 	
     public function getLatency()
     {
-        return $this->id;
+        return $this->latency;
     }
 
     public function setLatency($latency): IpInterface
