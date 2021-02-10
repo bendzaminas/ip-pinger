@@ -37,7 +37,7 @@ class IpPinger
                 });
          }
 
-         $pool->wait();
+         $this->pool->wait();
 	    
 	 return $pingedIps;
     }
